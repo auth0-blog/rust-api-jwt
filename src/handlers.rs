@@ -65,7 +65,7 @@ pub async fn delete_user(
     user_id: web::Path<str>,
 ) -> Result<HttpResponse, Error> {
     Ok(
-        web::block(move || delete_single_user(db, user_id)
+        web::block(move || delete_single_user(db, user_id))
             .await
             .map(|user| HttpResponse::Ok().json(user))
             .map_err(|_| HttpResponse::InternalServerError())?,
