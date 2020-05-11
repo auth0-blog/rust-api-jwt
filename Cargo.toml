@@ -22,4 +22,4 @@ uuid = { version = "0.7", features = ["serde", "v4"] }
 
 alcoholic_jwt = "1.0.0"
 reqwest = "0.9.22"
-
+diesel_migrations = "1.4.0"
