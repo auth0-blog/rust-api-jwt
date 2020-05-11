@@ -38,7 +38,8 @@ async fn main() -> std::io::Result<()> {
         .build(manager)
         .expect("Failed to create pool.");
 
-    embedded_migrations::run(&pool.get().expect("could not get db connection"));
+    embedded_migrations::run(&pool.get().expect("could not get db connection"))
+        .expect("could not run migrations");
 
     // Start http server
     HttpServer::new(move || {
